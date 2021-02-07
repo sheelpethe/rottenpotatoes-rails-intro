@@ -17,9 +17,9 @@
 <table class="table table-striped col-md-12" id="movies">
   <thead>
     <tr>
-      <th>Movie Title</th>
+      <th class="hilite <%='bg-warning' if @sort_field == 'title'%>"><%= link_to 'Movie Title', movies_path(sort: 'title', ratings: Hash[@ratings_to_show.map{|k| [k, 1]}]), :id => 'title_header' %></a></th>
       <th>Rating</th>
-      <th>Release Date</th>
+      <th class="hilite <%='bg-warning' if @sort_field == 'release_date'%>"><%= link_to 'Release Date', movies_path(sort: 'release_date', ratings: Hash[@ratings_to_show.map{|k| [k, 1]}]), :id => 'release_date_header' %></a></th>
       <th>More Info</th>
     </tr>
   </thead>

@@ -16,4 +16,8 @@ class Movie < ActiveRecord::Base
 		return @ratings_to_show
 	end
 
+	def self.sort_by(movies, key)
+		return movies.order(key)
+	end
+
 end
