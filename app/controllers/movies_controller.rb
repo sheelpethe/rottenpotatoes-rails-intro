@@ -19,6 +19,7 @@ class MoviesController < ApplicationController
 		else
 			if params[:ratings].nil?
 				params[:ratings] = session[:ratings]
+				redirect_to(movies_path(ratings: params[:ratings], sort: params[:sort]))
 			end
 			@movies = Movie.with_ratings(params[:ratings].keys)
       @ratings_to_show = Movie.ratings_to_show
